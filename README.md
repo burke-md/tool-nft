@@ -1,9 +1,10 @@
 # Tools
 
-The goal of this project is to:
+The goal of this project is to create a smart contract. This contract will represent in game tools. For example a black smith's hammar or fire tongues. The contract shall fulfill the below requirments. 
 
 - [x] Create an ERC721 NFT
-- [ ] With a fixed supply of 100 pieces
+- [ ] With a fixed supply of 5 pieces
+- [ ] Each token will hold an attribute ex. type of tool.
 - [x] Contract must be pausable
 - [x] Tokens must be burnable
 - [x] Use a URI to point to external data
@@ -20,12 +21,15 @@ The goal of this project is to:
 
 I wish to implement a high degree of test coverage. Below is a working list of these tests: 
 
+Token count: 
+- [x] Total number of created tokens before mint is zero
+- [ ] Total number of created tokens increments on mint
+- [ ] No more than 5 tokens can be minted
 
-- [x] Total number of created tokens before mint is zero.
-- [ ] Total number of created tokens increments on mint.
-
+Token functionality:
 - [ ] Tokens are able to be burnt
 
-- [ ] Token contract is pauseable(pause/unpause funcs work as expected).
+Contract mutability:
+- [ ] Token contract is pauseable(pause/unpause funcs work as expected)
 
-- [ ] URI can be updated after mint by owner.
+- [ ] URI can be updated after mint by owner
