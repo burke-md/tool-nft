@@ -32,19 +32,23 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
     internal
     whenNotPaused
     override
-    {
-      super._beforeTokenTransfer(from, to, tokenId);
-    }
+  {
+    super._beforeTokenTransfer(from, to, tokenId);
+  }
 
-//@dev The following functions (_burn, tokenURI) need
-//to be overridden as there are multiple conflicting 
-//definitions.
-    function _burn(uint256 tokenId) internal override(ERC721,
-    ERC721URIStorage) {
+  function getNumTokens() public view returns(uint256) {
+    return _tokenIdCounter.current();
+  }
+/*@dev The following functions (_burn, tokenURI) need
+to be overridden as there are multiple conflicting 
+definitions.
+*/
+  function _burn(uint256 tokenId) internal override(ERC721,
+  ERC721URIStorage) {
+    super._burn(tokenId);
+  }
 
-    }
-
-    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
-      return super.tokenURI(tokenId);
-    }
+  function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
+    return super.tokenURI(tokenId);
+  }
 }
