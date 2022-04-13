@@ -1,0 +1,24 @@
+{
+  "name": "tool-nft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burke-md/tool-nft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/burke-md/tool-nft/issues"
+  },
+  "homepage": "https://github.com/burke-md/tool-nft#readme",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "hardhat": "^2.9.3"
+  }
+}
