@@ -45,4 +45,12 @@ describe('Tool', function () {
     //@dev this expect statment is not catching the error that is displayed upon running tests. 
    expect(() => badToken()).to.throw(Error);
   });
+
+  it('should mint a new token and append tokenID to the base URI value.', async function () {
+    const token0 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
+
+    const token0URI = await this.tool.tokenURI(0); 
+
+    expect(token0URI).to.equal("https://base.uri/0");
+  });
 });

@@ -3,7 +3,7 @@
 The goal of this project is to create a smart contract. This contract will represent in game tools. For example a black smith's hammar or fire tongues. The contract shall fulfill the below requirments. 
 
 - [x] Create an ERC721 NFT
-- [ ] With a fixed supply of 5 pieces
+- [x] With a max supply of 5 pieces
 - [ ] Each token will hold an attribute ex. type of tool.
 - [x] Contract must be pausable
 - [x] Tokens must be burnable
@@ -25,6 +25,7 @@ Token count:
 - [x] Total number of created tokens before mint is zero
 - [x] Total number of created tokens increments on mint
 - [ ] No more than 5 tokens can be minted
+- [x] Token will append tokenId to base URI
 
 Token functionality:
 - [ ] Tokens are able to be burnt
