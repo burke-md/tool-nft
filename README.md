@@ -2,7 +2,7 @@
 
 The goal of this project is to:
 
-- [ ] Create an ERC721 NFT
+- [x] Create an ERC721 NFT
 - [ ] With a fixed supply of 100 pieces
 - [ ] Use a URI to point to external data
 - [ ] Implement a proxy, capable of updating deployed contract
