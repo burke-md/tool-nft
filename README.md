@@ -17,11 +17,13 @@ The goal of this project is to create a smart contract. This contract will repre
 - [ ] Build simple UI to interact w/ contract
 
 
-### Testing
+
+
+## Testing
 
 I wish to implement a high degree of test coverage. Below is a working list of these tests: 
 
-Token count: 
+Token minting: 
 - [x] Total number of created tokens before mint is zero
 - [x] Total number of created tokens increments on mint
 - [ ] No more than 5 tokens can be minted
