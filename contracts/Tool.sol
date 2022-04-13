@@ -21,8 +21,10 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
   function unpause() public onlyOwner {
     _unpause();
   }
+
 //@dev handle minting cap
   function safeMint(address to) public onlyOwner {
+    require(_tokenIdCounter.current() < 5, 'tokenIdCounter has incremented beyond maximum number of tokens');
     uint256 tokenId = _tokenIdCounter.current();
     _tokenIdCounter.increment();
     _safeMint(to, tokenId);
