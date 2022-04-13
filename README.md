@@ -23,7 +23,7 @@ I wish to implement a high degree of test coverage. Below is a working list of t
 
 Token count: 
 - [x] Total number of created tokens before mint is zero
-- [ ] Total number of created tokens increments on mint
+- [x] Total number of created tokens increments on mint
 - [ ] No more than 5 tokens can be minted
 
 Token functionality:
