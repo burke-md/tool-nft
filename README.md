@@ -6,7 +6,9 @@ The goal of this project is to:
 - [ ] With a fixed supply of 100 pieces
 - [x] Contract must be pausable
 - [x] Tokens must be burnable
-- [ ] Use a URI to point to external data
+- [x] Use a URI to point to external data
+  - [ ] Must be able to update URI
+  - [ ] Must use IPFS
 - [ ] Implement a proxy, capable of updating deployed contract
 - [ ] Write test cases for common functionality
 - [ ] Deploy to testnet

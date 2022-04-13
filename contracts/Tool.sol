@@ -2,12 +2,13 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Tool is ERC721, Pausable, Ownable, ERC721Burnable {
+contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIdCounter;
 
@@ -33,5 +34,17 @@ contract Tool is ERC721, Pausable, Ownable, ERC721Burnable {
     override
     {
       super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+//@dev The following functions (_burn, tokenURI) need
+//to be overridden as there are multiple conflicting 
+//definitions.
+    function _burn(uint256 tokenId) internal override(ERC721,
+    ERC721URIStorage) {
+
+    }
+
+    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
+      return super.tokenURI(tokenId);
     }
 }
