@@ -10,12 +10,10 @@ The goal of this project is to create a smart contract. This contract will repre
 - [ ] Contract must independantly 'unpause' for pre-sale approved buyers.
 - [x] Tokens must be burnable
 - [x] Use a URI to point to external data
-  - [ ] Must be able to update URI
   - [x] Must use IPFS
-- [ ] Implement a proxy, capable of updating deployed contract
 - [x] Implement unit tests
   - [ ] See below for comprhensive list of tests to complete
-- [ ] Deploy to testnet
+- [x] Deploy to testnet
 - [ ] Build simple UI to interact w/ contract
 
 
