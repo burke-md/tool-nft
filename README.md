@@ -6,7 +6,7 @@ The goal of this project is to create a smart contract. This contract will repre
 - [x] With a max supply of 5 pieces
 - [ ] Each token will hold an attribute ex. type of tool.
 - [x] Contract must be pausable
-- [ ] Contract must contain list for 'pre-sale' buyers(whitelist).
+- [x] Contract must contain list for 'pre-sale' buyers(whitelist).
 - [ ] Contract must independantly 'unpause' for pre-sale approved buyers.
 - [x] Tokens must be burnable
 - [x] Use a URI to point to external data
@@ -41,7 +41,7 @@ Contract mutability:
 
 Whitelist
 - [x] Accounts must be able to be added to white list by contract owner.
-- [ ] Accounts must not be able to be added by other accounts.
+- [ ] Accounts must not be able to be added by non-owner.
 
 Integration
 - [x] Whitelisted accounts can use whitelist mint function(See modifier in Whitelist contract and safeWhitelistMint func in Tool contract).
