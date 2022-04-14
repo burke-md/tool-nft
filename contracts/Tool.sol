@@ -41,7 +41,7 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
     super._beforeTokenTransfer(from, to, tokenId);
   }
 
-  function getNumTokens() public view returns(uint256) {
+  function getNumMintedTokens() public view returns(uint256) {
     return _tokenIdCounter.current();
   }
 /*@dev The following functions (_burn, tokenURI) need
