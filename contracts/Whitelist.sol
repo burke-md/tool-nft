@@ -1,21 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract Whitelist {
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-  address owner;
+contract Whitelist is Ownable {
+  constructor() {}
 
-  constructor() {
-    //@dev Could be set to specific wallet for managing whitelist
-    owner =  msg.sender;
-  }
-
-  modifier onlyOwner() {
-    require(msg.sender == owner, "Function caller must be contract owner.");
-    _;
-  }
-
-  modifier isWhitelistes(address _address) {
+  modifier isWhitelisted(address _address) {
     require(whiteListedsAddresses[_address], "Function caller must be whitelisted.");
     _;
   }
