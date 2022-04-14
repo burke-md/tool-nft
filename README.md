@@ -1,4 +1,4 @@
-# Tools
+# Tool
 
 The goal of this project is to create a smart contract. This contract will represent in game tools. For example a black smith's hammar or fire tongues. The contract shall fulfill the below requirments. 
 
@@ -26,7 +26,7 @@ I wish to implement a high degree of test coverage. Below is a working list of t
 Token minting: 
 - [x] Total number of created tokens before mint is zero
 - [x] Total number of created tokens increments on mint
-- [ ] No more than 5 tokens can be minted
+- [x] No more than 5 tokens can be minted
 - [x] Token will append tokenId to base URI
 
 Token functionality:

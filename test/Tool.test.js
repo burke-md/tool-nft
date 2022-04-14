@@ -25,20 +25,21 @@ describe('Tool', function () {
   });
 
 
- xit('should not mint more than maximum allowable tokens', async function () {
+ it('should not mint more than maximum allowable tokens', async function () {
+   let isErr = false;
     const token0 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");  
     const token1 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     const token2 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     const token3 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     const token4 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
-    const token5 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
    
-    const badToken = async() => {
+    try {
       await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
+    } catch (err) {
+      isErr = true;
     }
 
-    //@dev this expect statment is not catching the error that is displayed upon running tests. 
-   expect(() => badToken()).to.throw(Error);
+    expect(isErr).to.equal(true);
   });
 
   it('should mint a new token and append tokenID to the base URI value.', async function () {
