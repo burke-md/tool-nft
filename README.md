@@ -44,3 +44,13 @@ Whitelist
 Integration
 - [x] Whitelisted accounts can use whitelist mint function(See modifier in Whitelist contract and safeWhitelistMint func in Tool contract).
 - [x] Non whitelisted accounts cannot use whitelist mint function.
+
+
+## Deploying
+
+After initial deployment to Rinkeby testnet I minted token #1 through the hardhat CLI. You will see from the screen shots below that the meta data made available from IPFS via token URI displays on the opensea testnet viewer.
+![Screen Shot 2022-04-14 at 6 36 51 PM](https://user-images.githubusercontent.com/22263098/163490826-e689234f-66d9-494c-9f83-33c897dfb832.png)
+
+
+![Screen Shot 2022-04-14 at 6 48 10 PM](https://user-images.githubusercontent.com/22263098/163490831-da73e3bf-cc29-4871-af34-490b71e92405.png)
+
