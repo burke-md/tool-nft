@@ -40,5 +40,6 @@ Contract mutability:
 - [ ] URI can be updated after mint by owner
 
 Whitelist
-- [ ] Accounts must be able to be added to white list.
+- [ ] Accounts must be able to be added to white list by contract owner.
+- [ ] Accounts must not be able to be added by other accounts.
 - [ ] Only white list accounts can call special mint function.
