@@ -17,7 +17,7 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Wh
   constructor() ERC721("Tool", "TOOL") {}
 
   function _baseURI() internal pure override returns (string memory) {
-    return "ipfs://CID";
+    return "ipfs://Qmcto2bTxvuQVj25hws6YXPD42ENFykdVPsVVo1LrTgCHQ/";
   }
 
   function pause() public onlyOwner {
