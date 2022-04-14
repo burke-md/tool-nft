@@ -48,7 +48,9 @@ Integration
 
 ## Deploying
 
-After initial deployment to Rinkeby testnet I minted token #1 through the hardhat CLI. You will see from the screen shots below that the meta data made available from IPFS via token URI displays on the opensea testnet viewer.
+After initial deployment to Rinkeby testnet I minted token #1 through the hardhat CLI. You will see from the screen shots below that the meta data made available from IPFS via token URI displays on the opensea testnet viewer. This can be viewed from https://testnets.opensea.io/assets/0x3215f99412a72f9660Aed1D8aE552e5876804693/1
+
+
 ![Screen Shot 2022-04-14 at 6 36 51 PM](https://user-images.githubusercontent.com/22263098/163490826-e689234f-66d9-494c-9f83-33c897dfb832.png)
 
 
