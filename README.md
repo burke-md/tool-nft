@@ -42,4 +42,7 @@ Contract mutability:
 Whitelist
 - [x] Accounts must be able to be added to white list by contract owner.
 - [ ] Accounts must not be able to be added by other accounts.
-- [ ] Only white list accounts can call special mint function.
+
+Integration
+- [x] Whitelisted accounts can use whitelist mint function(See modifier in Whitelist contract and safeWhitelistMint func in Tool contract).
+- [x] Non whitelisted accounts cannot use whitelist mint function.

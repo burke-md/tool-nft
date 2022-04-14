@@ -7,7 +7,7 @@ contract Whitelist is Ownable {
   constructor() {}
 
   modifier isWhitelisted(address _address) {
-    require(whiteListedsAddresses[_address], "Function caller must be whitelisted.");
+    require(whiteListedsAddresses[_address], "Function caller must be whitelisted");
     _;
   }
 

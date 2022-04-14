@@ -8,7 +8,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
+import "./Whitelist.sol";
+
+contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Whitelist {
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIdCounter;
 
@@ -28,6 +30,15 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
 
   function safeMint(address to) public onlyOwner {
     require(_tokenIdCounter.current() < 5, 'tokenIdCounter has incremented beyond maximum number of tokens');
+
+    uint256 tokenId = _tokenIdCounter.current();
+    _tokenIdCounter.increment();
+    _safeMint(to, tokenId);
+  }
+
+  function safeWhitelistMint(address to) public onlyOwner isWhitelisted(to) {
+    require(_tokenIdCounter.current() < 5, 'tokenIdCounter has incremented beyond maximum number of tokens');
+    
     uint256 tokenId = _tokenIdCounter.current();
     _tokenIdCounter.increment();
     _safeMint(to, tokenId);
@@ -44,10 +55,11 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
   function getNumMintedTokens() public view returns(uint256) {
     return _tokenIdCounter.current();
   }
-/*@dev The following functions (_burn, tokenURI) need
-to be overridden as there are multiple conflicting 
-definitions.
-*/
+
+  /*@dev The following functions (_burn, tokenURI) need
+  to be overridden as there are multiple
+  definitions.
+  */
   function _burn(uint256 tokenId) internal override(ERC721,
   ERC721URIStorage) {
     super._burn(tokenId);
