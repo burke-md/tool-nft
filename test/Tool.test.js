@@ -49,9 +49,25 @@ describe('Tool', function () {
     expect(token0URI).to.equal("https://base.uri/0");
   });
 
+  it('should not mint a new token after contract has been paused.', async function () {
+    let isErr = false;
+    await this.tool.pause();
+    try { 
+        await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
+    } catch (err) {
+      isErr = true;
+    } 
 
+    expect(isErr).to.equal(true);
+  });
 
+  it('should mint a new token after contract has been unpaused.', async function () {
+    await this.tool.pause();
+    await this.tool.unpause();
 
-
-
+    const createToken = async () => {
+      await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
+    }
+    expect(createToken).not.to.throw();
+  });
 });

@@ -33,6 +33,7 @@ Token functionality:
 - [ ] Tokens are able to be burnt
 
 Contract mutability:
-- [ ] Token contract is pauseable(pause/unpause funcs work as expected)
+- [x] Tokens cannot be minted after contract is paused.
+- [x] Tokens can be minted again after contract is unpaused.
 
 - [ ] URI can be updated after mint by owner
