@@ -1,11 +1,13 @@
 # Tool
 
-The goal of this project is to create a smart contract. This contract will represent in game tools. For example a black smith's hammar or fire tongues. The contract shall fulfill the below requirments. 
+The goal of this project is to create a smart contract. This contract will represent in game tools. For example a black smith's hammar or fire tongues. The contract shall fulfill the below requirments:
 
 - [x] Create an ERC721 NFT
 - [x] With a max supply of 5 pieces
 - [ ] Each token will hold an attribute ex. type of tool.
 - [x] Contract must be pausable
+- [ ] Contract must contain list for 'pre-sale' buyers(whitelist).
+- [ ] Contract must independantly 'unpause' for pre-sale approved buyers.
 - [x] Tokens must be burnable
 - [x] Use a URI to point to external data
   - [ ] Must be able to update URI
@@ -35,5 +37,8 @@ Token functionality:
 Contract mutability:
 - [x] Tokens cannot be minted after contract is paused.
 - [x] Tokens can be minted again after contract is unpaused.
-
 - [ ] URI can be updated after mint by owner
+
+Whitelist
+- [ ] Accounts must be able to be added to white list.
+- [ ] Only white list accounts can call special mint function.
