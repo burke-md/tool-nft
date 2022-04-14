@@ -17,7 +17,7 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Wh
   constructor() ERC721("Tool", "TOOL") {}
 
   function _baseURI() internal pure override returns (string memory) {
-    return "https://base.uri/";
+    return "ipfs://CID";
   }
 
   function pause() public onlyOwner {
@@ -31,8 +31,8 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Wh
   function safeMint(address to) public onlyOwner {
     require(_tokenIdCounter.current() < 5, 'tokenIdCounter has incremented beyond maximum number of tokens');
 
-    uint256 tokenId = _tokenIdCounter.current();
     _tokenIdCounter.increment();
+    uint256 tokenId = _tokenIdCounter.current();
     _safeMint(to, tokenId);
   }
 

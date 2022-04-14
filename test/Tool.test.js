@@ -26,13 +26,13 @@ describe('Tool', function () {
 
 
  it('should not mint more than maximum allowable tokens', async function () {
-   let isErr = false;
-    const token0 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");  
+   let isErr = false;  
     const token1 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     const token2 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     const token3 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
-    const token4 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
-   
+    const token4 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8")  
+    const token5 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");     
+    
     try {
       await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
     } catch (err) {
