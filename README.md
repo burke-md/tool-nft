@@ -4,14 +4,14 @@ The goal of this project is to create a smart contract. This contract will repre
 
 - [x] Create an ERC721 NFT
 - [x] With a max supply of 5 pieces
-- [ ] Each token will hold an attribute ex. type of tool.
+- [x] Each token will hold an attribute ex. type of tool.
 - [x] Contract must be pausable
 - [x] Contract must contain list for 'pre-sale' buyers(whitelist).
 - [ ] Contract must independantly 'unpause' for pre-sale approved buyers.
 - [x] Tokens must be burnable
 - [x] Use a URI to point to external data
   - [ ] Must be able to update URI
-  - [ ] Must use IPFS
+  - [x] Must use IPFS
 - [ ] Implement a proxy, capable of updating deployed contract
 - [x] Implement unit tests
   - [ ] See below for comprhensive list of tests to complete

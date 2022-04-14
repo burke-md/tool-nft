@@ -42,12 +42,14 @@ describe('Tool', function () {
     expect(isErr).to.equal(true);
   });
 
-  it('should mint a new token and append tokenID to the base URI value.', async function () {
-    const token0 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
+  it('should mint a new token and append ${tokenID}.json to the base URI value.', async function () {
+    const token1 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
 
-    const token0URI = await this.tool.tokenURI(0); 
+    const token2 = await this.tool.safeMint("0x70997970c51812dc3a010c7d01b50e0d17dc79c8");
 
-    expect(token0URI).to.equal("https://base.uri/0");
+    const token2URI = await this.tool.tokenURI(2); 
+
+    expect(token2URI).to.equal("ipfs://QmVCNF9M7ABGBSLkmAvamjfNs8cNdCctwr2W9Us1S6TWyF/2.json");
   });
 
   it('should not mint a new token after contract has been paused.', async function () {

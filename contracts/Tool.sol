@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "./Whitelist.sol";
 
 contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Whitelist {
@@ -17,7 +17,7 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Wh
   constructor() ERC721("Tool", "TOOL") {}
 
   function _baseURI() internal pure override returns (string memory) {
-    return "ipfs://Qmcto2bTxvuQVj25hws6YXPD42ENFykdVPsVVo1LrTgCHQ/";
+    return "ipfs://QmVCNF9M7ABGBSLkmAvamjfNs8cNdCctwr2W9Us1S6TWyF/";
   }
 
   function pause() public onlyOwner {
@@ -34,14 +34,24 @@ contract Tool is ERC721, ERC721URIStorage, Pausable, Ownable, ERC721Burnable, Wh
     _tokenIdCounter.increment();
     uint256 tokenId = _tokenIdCounter.current();
     _safeMint(to, tokenId);
+    appendJsonSuffix(tokenId);
   }
+
+
 
   function safeWhitelistMint(address to) public onlyOwner isWhitelisted(to) {
     require(_tokenIdCounter.current() < 5, 'tokenIdCounter has incremented beyond maximum number of tokens');
     
-    uint256 tokenId = _tokenIdCounter.current();
     _tokenIdCounter.increment();
+    uint256 tokenId = _tokenIdCounter.current(); 
     _safeMint(to, tokenId);
+    appendJsonSuffix(tokenId);
+  }
+
+    function appendJsonSuffix(uint256 tokenId) internal {
+    string memory numTokenId = Strings.toString(tokenId);
+    string memory suffix = string(abi.encodePacked(numTokenId, ".json"));
+    _setTokenURI(tokenId, suffix);
   }
 
   function _beforeTokenTransfer(address from, address to, uint256 tokenId)
