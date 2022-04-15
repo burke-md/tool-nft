@@ -56,3 +56,18 @@ After initial deployment to Rinkeby testnet I minted token #1 through the hardha
 
 ![Screen Shot 2022-04-14 at 6 48 10 PM](https://user-images.githubusercontent.com/22263098/163490831-da73e3bf-cc29-4871-af34-490b71e92405.png)
 
+
+Moving on from the CLI, I used https://oneclickdapp.com/ to interact with the contract. The video below shows that I was unable to mint a new token until unpausing the contract. After that the transaction is approved and the total number of minted tokens is incremented. These actions can be confirmed from etherscan(screenshot below video) and the new tokens are viewable from the following links:
+https://testnets.opensea.io/assets/0x3215f99412a72f9660Aed1D8aE552e5876804693/2
+https://testnets.opensea.io/assets/0x3215f99412a72f9660Aed1D8aE552e5876804693/3
+
+
+https://user-images.githubusercontent.com/22263098/163630386-4ed24128-f5ab-4111-a9fe-1ac5aa74152b.mov
+
+
+![Screen Shot 2022-04-15 at 4 36 30 PM](https://user-images.githubusercontent.com/22263098/163630390-845c875e-5d82-4171-8590-1c10c610d84d.png)
+
+
+
+
+
