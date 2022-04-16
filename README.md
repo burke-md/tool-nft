@@ -14,7 +14,7 @@ The goal of this project is to create a smart contract. This contract will repre
 - [x] Implement unit tests
   - [ ] See below for comprhensive list of tests to complete
 - [x] Deploy to testnet
-- [ ] Build simple UI to interact w/ contract
+- [x] Build simple UI to interact w/ contract
 
 
 
@@ -66,6 +66,8 @@ https://user-images.githubusercontent.com/22263098/163630386-4ed24128-f5ab-4111-
 
 
 ![Screen Shot 2022-04-15 at 4 36 30 PM](https://user-images.githubusercontent.com/22263098/163630390-845c875e-5d82-4171-8590-1c10c610d84d.png)
+
+Beyond oneclickddApp, I wanted to build an intrerface. A simple react project for this contract is being developed in another repo. It can be found here : https://github.com/burke-md/toolWeb3
 
 
 
